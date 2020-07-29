@@ -1,10 +1,12 @@
 import React from 'react'
 
-const Todos = () => {
+const Todos = (props) => {
+    console.log(props)
+    const {name} = props;
     return (
         <div>
             <div className="alert alert-primary" role="alert" >
-                A simple primary alert—check it out!
+                {name}
                 <span className="text-right"><a href="#" class="alert-link">Remove</a> </span>
             </div>
         </div>
