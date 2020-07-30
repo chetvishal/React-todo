@@ -9,15 +9,36 @@ const initState = {
     ]
 }
 
-const idCreator = () => {
-    let n=initState.todos.length
-    return n+1;
-}
+// const idCreator = () => {
+//     let n=initState.todos.length
+//     return n+1;
+// }
 
-console.log(idCreator())
+// console.log(idCreator())
 
 const projectReducer = (state = initState, action) => {
-    return state
+    switch(action.type){
+        case 'ADD_TODO': 
+            console.log('ADDED A TODO')
+            // action.todo.id = idCreator();
+            console.log(action.todo)
+            // state = [...state.todos, action.todo]
+            // this.setState({
+            //     todos: todos
+            // })
+            console.log(state)
+            
+            return {
+                todos: [...state.todos, action.todo]
+            }
+            case 'REMOVE_TODO': 
+                return{
+                    todos: action.todos
+                }
+        default: 
+            return state;
+    }
+    
 }
 
 export default projectReducer;

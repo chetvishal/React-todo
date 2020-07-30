@@ -10,7 +10,9 @@ import TodoList from './Components/MainPg/TodoList';
 class App extends Component {
 
   render() {
-    // console.log(this.props)
+    console.log('from app.js')
+    console.log(this.props.todos.todos.length)
+
     return (
       <div className="App">
         <MainPg />
@@ -18,7 +20,7 @@ class App extends Component {
         <Todos name="Drive car" />
         <Todos name="Give water to plants" /> */}
         <TodoList props={this.props}/>
-        <AddTodo />
+        <AddTodo length={this.props.todos.todos.length}/>
       </div>
     );
   }
