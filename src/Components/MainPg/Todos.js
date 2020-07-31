@@ -21,7 +21,7 @@ const Todos = (props) => {
     }
     return (
         <div>
-            <div className="alert alert-primary" role="alert" >
+            <div className="alert alert-primary todo" role="alert" >
                 {name}
                 <span className="text-right"><a href="#" className="alert-link" onClick={handleClick}>Remove</a> </span>
             </div>

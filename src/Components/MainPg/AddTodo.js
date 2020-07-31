@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
+import {addTodo} from '../store/actions/projectActions'
 
 class AddTodo extends Component {
 
@@ -22,15 +23,25 @@ class AddTodo extends Component {
     }
     handleClick = (e) => {
         e.preventDefault()
+        
+        if(this.state.todo){
+        // this.props.addTodo(this.state)
         this.props.addTodo(this.state)
+        }else{
+            function myFunction()  {
+                alert("Please type something!")
+            }
+            myFunction()
+        }
+
         this.setState({
             todo: ''
         })
     }
 
     render() {
-        // console.log('from addtodo')
-        // console.log(this.props.todos.todos.length)
+        console.log('from addtodo')
+        console.log(this.props.length)
         return (
             <div>
             <form onSubmit={this.handleClick}>
@@ -48,7 +59,8 @@ class AddTodo extends Component {
 
 const mapDispatchToProps = (dispatch) =>{
     return{
-        addTodo: (todo) => dispatch({type: 'ADD_TODO', todo})
+        // addTodo: (todo) => dispatch({type: 'ADD_TODO', todo})
+        addTodo: (todo) => dispatch(addTodo(todo))
     }
 }
 
