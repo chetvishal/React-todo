@@ -3,7 +3,8 @@ export const addTodo = (todo) => {
         const firestore = getFirestore();
         
         firestore.collection('todos').doc(`${todo.id}`).set({
-            ...todo
+            ...todo,
+            createdAt: new Date()
         })
 
         dispatch({type: 'ADD_TODO', todo})

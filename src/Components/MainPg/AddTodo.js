@@ -9,15 +9,15 @@ class AddTodo extends Component {
         todo: ''
     }
 
-    idCreator = () => {
-        let n=this.props.length
-        return n+1;
-    }
+    // idCreator = () => {
+    //     let n=this.props.length
+    //     return n+1;
+    // }
 
     handleChange = (e) => {
         // Math.floor(Math.random() * (200 - 1 + 1) + 1)
         this.setState({
-            id: this.idCreator(),
+            id: Math.floor(Math.random() * (200 - 1 + 1) + 1),
             [e.target.id] : e.target.value
         })
     }

@@ -19,32 +19,22 @@ class App extends Component {
     console.log('from app.js')
     // console.log(this.props.todos.length)
 
-    let val = 0;
-    console.log(val)
-    if(this.props.todos){
-      console.log(this.props.todos.length)
-      val = this.props.todos.length
-      // this.setState({
-      //   val: val
-      // })
-    }
-    console.log(val)
-
-    // function findId() {
-    //   {this.props.todos && this.props.todos.map(todo => {
-    //     console.log('one' )
-    // })}
+    // let val = 0;
+    // console.log(val)
+    // if(this.props.todos){
+    //   console.log(this.props.todos.length)
+    //   val = this.props.todos.length
+      
     // }
-    // findId()
-    
+    // console.log(val)
+
     return (
       <div className="App">
         <MainPg />
         <TodoList todos={this.props.todos}/>
         {/* <AddTodo /> */}
         {/* <AddTodo length={this.props.todos.todos.length}/> */}
-        <AddTodo length={val}/>
-        {val}
+        <AddTodo />
       </div>
     );
   }
@@ -63,6 +53,6 @@ const mapStateToProps = (state) => {
 export default compose(
   connect(mapStateToProps),
   firestoreConnect([
-    {collection: 'todos'}
+    {collection: 'todos',orderBy: ['createdAt','asc']}
   ])
   )(App);
