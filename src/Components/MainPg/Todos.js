@@ -1,23 +1,17 @@
 import React from 'react'
 import {connect} from 'react-redux';
-
-
-
+import {removeTodo} from '../store/actions/projectActions'
 
 const Todos = (props) => {
     const {name} = props;
-    // state = {
-    //     todos: []
-    // }
-    function handleClick(){
-        console.log('clicked on remove')
-        console.log(props.todos)
-        console.log(props.id)
+    function handleClick(e){
 
-        let todos = props.todos.todos.filter(todo=>{
-            return todo.id !==props.id
-        })
-        props.removeTodo(todos)
+        props.removeTodo(props)
+
+        //solution to reloading page after updating in firebase 
+        //source: https://stackoverflow.com/questions/41481522/how-to-refresh-a-page-using-react-route-link
+        // window.location.reload();
+
     }
     return (
         <div>
@@ -37,7 +31,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return{
-         removeTodo: (todos) => {dispatch({type: 'REMOVE_TODO', todos: todos})}
+         removeTodo: (todo) => dispatch(removeTodo(todo))
     }
 }
 

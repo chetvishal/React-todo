@@ -1,8 +1,4 @@
 import React, { Component } from 'react';
-import SignedOutLinks from './SignedOutLinks';
-import SignedInLinks from './SignedInLinks';
-
-
 
 class MainPg extends Component {
     render() {
@@ -17,11 +13,6 @@ class MainPg extends Component {
 
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav mr-auto"></ul>
-                        {/* <ul className="navbar-nav "> */}
-                            <SignedOutLinks />
-                            <SignedInLinks />
-                            {/* <SignedInLinks /> */}
-                        {/* </ul> */}
                     </div>
 
                 </nav>
@@ -29,6 +20,7 @@ class MainPg extends Component {
         )
     }
 }
+
 
 
 export default MainPg;

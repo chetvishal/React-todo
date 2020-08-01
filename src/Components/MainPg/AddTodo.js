@@ -9,11 +9,6 @@ class AddTodo extends Component {
         todo: ''
     }
 
-    // idCreator = () => {
-    //     let n=this.props.length
-    //     return n+1;
-    // }
-
     handleChange = (e) => {
         // Math.floor(Math.random() * (200 - 1 + 1) + 1)
         this.setState({
@@ -37,6 +32,8 @@ class AddTodo extends Component {
         this.setState({
             todo: ''
         })
+
+        
     }
 
     render() {
@@ -45,7 +42,8 @@ class AddTodo extends Component {
         return (
             <div>
             <form onSubmit={this.handleClick}>
-                <div className="input-group input-group-lg col-xs-4">
+            
+                <div className="input-group input-group-lg col-xs-4" style={{marginTop:15}}>
                     <div className="input-group-prepend">
                         <span className="input-group-text" id="inputGroup-sizing-lg" onClick={this.handleClick} style={{cursor: 'pointer'}}>Add Task</span>
                     </div>
