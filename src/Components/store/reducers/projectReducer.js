@@ -1,13 +1,5 @@
 
-const initState = {
-    //In arrays id is important, we have to use it as key's
-    todos: [
-        { id: 1, todo: 'eat food' },
-        { id: 2, todo: 'get groceries' },
-        { id: 3, todo: 'enjoy' },
-        { id: 4, todo: 'cut nails' }
-    ]
-}
+const initState = {}
 const projectReducer = (state = initState, action) => {
     switch(action.type){
 
@@ -17,8 +9,11 @@ const projectReducer = (state = initState, action) => {
             return state;
 
         case 'REMOVE_TODO': 
+            console.log('REMOVE SUCCESS', action.err) 
             return state;
-
+        case 'REMOVE_ERROR':
+            console.log('REMOVE ERROR', action.err) 
+            return state;
         default: 
             return state;
     }

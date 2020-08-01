@@ -20,8 +20,7 @@ class AddTodo extends Component {
         e.preventDefault()
         
         if(this.state.todo){
-        // this.props.addTodo(this.state)
-        this.props.addTodo(this.state)
+            this.props.addTodo(this.state)
         }else{
             function myFunction()  {
                 alert("Please type something!")
@@ -32,13 +31,10 @@ class AddTodo extends Component {
         this.setState({
             todo: ''
         })
-
         
     }
 
     render() {
-        console.log('from addtodo')
-        console.log(this.props.length)
         return (
             <div>
             <form onSubmit={this.handleClick}>

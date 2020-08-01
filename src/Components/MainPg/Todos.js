@@ -5,7 +5,7 @@ import {removeTodo} from '../store/actions/projectActions'
 const Todos = (props) => {
     const {name} = props;
     function handleClick(e){
-
+        e.preventDefault()
         props.removeTodo(props)
 
         //solution to reloading page after updating in firebase 
@@ -29,10 +29,17 @@ const mapStateToProps = (state) => {
     }
 }
 
+function reload() {
+    window.location.reload();
+}
+
 const mapDispatchToProps = (dispatch) => {
+    
     return{
          removeTodo: (todo) => dispatch(removeTodo(todo))
+         
     }
+    
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Todos);
