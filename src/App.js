@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import MainPg from './Components/MainPg/MainPg'
+import MainPg from './Components/MainPg/MainPg';
 import AddTodo from './Components/MainPg/AddTodo';
 import TodoList from './Components/MainPg/TodoList';
 
