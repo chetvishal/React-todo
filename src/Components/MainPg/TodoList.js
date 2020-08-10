@@ -3,6 +3,7 @@ import Todos from './Todos';
 import {firestoreConnect} from 'react-redux-firebase';
 import {compose} from 'redux';
 import {connect} from 'react-redux';
+import AddTodo from './AddTodo';
 
 class TodoList extends Component {
     render() {
@@ -18,7 +19,7 @@ class TodoList extends Component {
                         )
                     })
                 }
-
+                <AddTodo />
             </div>
         )
     }

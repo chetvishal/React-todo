@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import SignedInLinks from './SignedInLinks';
+import SignedOutLinks from './SignedOutLinks';
+import {connect} from 'react-redux';
 
 class MainPg extends Component {
     render() {
@@ -12,7 +15,10 @@ class MainPg extends Component {
                     </button>
 
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul className="navbar-nav mr-auto"></ul>
+                        <ul className="nav navbar-nav ml-auto">
+                            <SignedInLinks />
+                            <SignedOutLinks />
+                        </ul>
                     </div>
 
                 </nav>
@@ -21,6 +27,11 @@ class MainPg extends Component {
     }
 }
 
+const mapStateToProps = (state) => {
+    console.log(state);
+    return{
 
+    }
+}
 
-export default MainPg;
+export default connect(mapStateToProps)(MainPg);
