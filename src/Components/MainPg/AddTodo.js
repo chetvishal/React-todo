@@ -53,7 +53,6 @@ class AddTodo extends Component {
 
 const mapDispatchToProps = (dispatch) =>{
     return{
-        // addTodo: (todo) => dispatch({type: 'ADD_TODO', todo})
         addTodo: (todo) => dispatch(addTodo(todo))
     }
 }

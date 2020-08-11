@@ -18,8 +18,6 @@ class MainPg extends Component {
 
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="nav navbar-nav ml-auto">
-                            {/* <SignedInLinks />
-                            <SignedOutLinks /> */}
                             {links}
                         </ul>
                     </div>

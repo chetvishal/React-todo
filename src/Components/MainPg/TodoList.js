@@ -8,8 +8,6 @@ import {Redirect} from 'react-router-dom';
 
 class TodoList extends Component {
     render() {
-        // console.log(this.props.todos)
-        // console.log(this.props)
         const {auth} = this.props;
         if(!auth.uid) return <Redirect to='/signin' />
         return (

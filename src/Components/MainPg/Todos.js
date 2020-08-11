@@ -37,9 +37,7 @@ const mapDispatchToProps = (dispatch) => {
     
     return{
          removeTodo: (todo) => dispatch(removeTodo(todo))
-         
     }
-    
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Todos);
