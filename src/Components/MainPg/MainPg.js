@@ -5,7 +5,9 @@ import {connect} from 'react-redux';
 
 class MainPg extends Component {
     render() {
-
+        console.log('from main')
+        console.log(this.props)
+        const links = this.props.firebase.isEmpty ? <SignedOutLinks /> : <SignedInLinks />
         return (
             <div>
                 <nav className="navbar navbar-icon-top navbar-expand-lg navbar-dark bg-dark">
@@ -16,8 +18,9 @@ class MainPg extends Component {
 
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="nav navbar-nav ml-auto">
-                            <SignedInLinks />
-                            <SignedOutLinks />
+                            {/* <SignedInLinks />
+                            <SignedOutLinks /> */}
+                            {links}
                         </ul>
                     </div>
 
@@ -28,9 +31,9 @@ class MainPg extends Component {
 }
 
 const mapStateToProps = (state) => {
-    console.log(state);
+    
     return{
-
+        firebase: state.firebase.auth
     }
 }
 

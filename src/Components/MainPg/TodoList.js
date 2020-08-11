@@ -4,10 +4,14 @@ import {firestoreConnect} from 'react-redux-firebase';
 import {compose} from 'redux';
 import {connect} from 'react-redux';
 import AddTodo from './AddTodo';
+import {Redirect} from 'react-router-dom';
 
 class TodoList extends Component {
     render() {
         // console.log(this.props.todos)
+        // console.log(this.props)
+        const {auth} = this.props;
+        if(!auth.uid) return <Redirect to='/signin' />
         return (
             <div className='todolist'>
                 {
@@ -27,7 +31,8 @@ class TodoList extends Component {
 
 const mapStateToProps = (state) => {
     return{
-        todos: state.firestore.ordered.todos
+        todos: state.firestore.ordered.todos,
+        auth: state.firebase.auth
       }
 }
 
