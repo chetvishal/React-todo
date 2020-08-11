@@ -11,7 +11,7 @@ const SignedInLinks = (props) => {
     return(
         <div>
             <div className="navbar-nav">
-                <a className="nav-item nav-link" onClick={handleClick}>Logout</a>
+                <a className="nav-item nav-link" onClick={handleClick} >Logout</a>
             </div>
         </div>
     )

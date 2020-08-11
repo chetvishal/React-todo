@@ -54,3 +54,7 @@
   margin-right: auto;
 }
 
+.nav-item:hover{
+  cursor: pointer;
+}
+
